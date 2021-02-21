@@ -57,12 +57,14 @@ int main(int argc, char** argv)
 
     if (argc != 2)
     {
+        std::cout << "anyplayer <flac or oggvorbis file>" << std::endl;
         return 0;
     }
 
     auto decoder = anyplayer::create_decoder(argv[1]);
     if (!decoder)
     {
+        std::cout << "Not a FLAC or OggVorbis file" << std::endl;
         return 0;
     }
 
